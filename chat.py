@@ -10,8 +10,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 nltk.download('punkt', quiet=True)
+
 # getting the data
-url = 'https://www.mayoclinic.org/diseases-conditions/brain-tumor/symptoms-causes/syc-20350084'
+
+url = \
+    'https://www.mayoclinic.org/diseases-conditions/brain-tumor/symptoms-causes/syc-20350084'
 article = ar(url)
 article.download()
 article.parse()
@@ -20,7 +23,7 @@ data = article.text
 data_words = data.split()
 text = data
 sentence_list = nltk.sent_tokenize(text)
-print(sentence_list)
+print sentence_list
 
 
 def greeting_reply(text):
@@ -64,4 +67,4 @@ def bot_response(user_input):
     similarity_scores_list = similarity_scores.flatten()
     index = index_sort(similarity_scores_list)
     c = similarity_scores_list
-    print(c)
+    print c
